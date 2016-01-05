@@ -1,4 +1,4 @@
-(function(validator) {
+(function(validatorjs) {
     'use strict';
 
     angular.module('registration')
@@ -9,14 +9,45 @@
     function registrationValidator() {
         var service = {};
 
-        service.validator = validator;
-        service.salam = salam;
+        service.validate = validate;
+
+        // validator = validatorjs;
 
         return service;
 
-        function salam(string) {
-            var hai = string;
-            return hai;
+        function validate(formData) {
+            var result = {};
+
+            var data = {
+                firstName: formData.firstName,
+                lastName: formData.lastName,
+                username: formData.username,
+                password: formData.password,
+                email: formData.email
+            };
+
+            var rules = {
+                firstName: 'required|min:3',
+                lastName: 'required',
+                username: 'required|min:5',
+                password: 'required',
+                email: 'required|email' 
+            };
+
+            var errorMessages = {
+                required: "Don't let :attribute empty.",
+                min: {
+                    string: "The :attribute is too short. Minimum length is :min."
+                },
+                email: "This is not valid :attribute format."
+            };
+
+            var validation = new validatorjs(data, rules, errorMessages);
+
+            result.valid = validation.passes();
+            result.messages = validation.errors.all();
+
+            return result;
         }
     }
 })(Validator);

@@ -4,13 +4,28 @@
     angular.module('registration')
         .controller('registrationController', registrationController);
 
-    registrationController.$inject = ['registrationValidator'];
+    registrationController.$inject = ['$scope', 'registrationValidator'];
 
-    function registrationController(registrationValidator) {
+    function registrationController($scope, registrationValidator) {
         var vm = this;
 
-        vm.welcome = "hi, this is from controller.";
-        vm.salam = registrationValidator.salam('aku dari factory dulu lhoo'); 
+        vm.submit = submit;
+        vm.formData = {};
+        vm.messages = {};
+
+        function submit() {
+            console.log("sudah ditekan tombolnya");
+            console.log(vm.formData);
+
+            var validation = registrationValidator.validate(vm.formData);
+            vm.messages = validation.messages;
+
+            if (validation.valid) {
+                console.log("hore lolos validasi");
+            } else {
+                console.log(validation.messages);
+            }
+        }
     }
 
 })();

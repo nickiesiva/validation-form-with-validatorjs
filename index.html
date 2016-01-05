@@ -19,37 +19,39 @@
             <form class="col s12">
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="first_name" type="text" class="validate">
+                        <input id="first_name" type="text" class="validate" ng-model="registration.formData.firstName">
                         <label for="first_name">First Name</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
+                        <input id="last_name" type="text" class="validate" ng-model="registration.formData.lastName">
                         <label for="last_name">Last Name</label>
                     </div>
                 </div>
-                <p>{{ registration.welcome }}</p>
-                <p>{{ registration.salam }}</p>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="username" type="text" class="validate">
+                        <input id="username" type="text" class="validate" ng-model="registration.formData.username">
                         <label for="disabled">Username</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="password" type="password" class="validate">
+                        <input id="password" type="password" class="validate" ng-model="registration.formData.password">
                         <label for="password">Password</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
+                        <input id="email" type="email" class="validate" ng-model="registration.formData.email">
                         <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button class="btn waves-effect waves-light right" type="submit" ng-click="registration.submit()">Submit</button>
                     </div>
                 </div>
             </form>
         </div>
-        <button class="btn waves-effect waves-light right" type="submit" name="action">Submit</button>
     </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
