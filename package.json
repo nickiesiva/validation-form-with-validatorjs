@@ -1,0 +1,20 @@
+{
+  "name": "register-form-with-validatorjs",
+  "version": "1.0.0",
+  "description": "it's just simple register form. the main purpose is to learn about validatorjs. learn how to validate something and how to show error in the browser and or console log.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "validatorjs",
+    "validation"
+  ],
+  "author": "nickiesiva",
+  "license": "MIT",
+  "devDependencies": {
+    "angular": "^1.4.8",
+    "materialize-css": "^0.97.5",
+    "validatorjs": "^2.0.2"
+  }
+}
