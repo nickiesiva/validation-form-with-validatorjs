@@ -18,9 +18,12 @@
         function validate(formData) {
             var result = {};
 
+            console.log(formData);
+
             var data = {
                 firstName: formData.firstName,
                 lastName: formData.lastName,
+                city: formData.city,
                 username: formData.username,
                 password: formData.password,
                 email: formData.email
@@ -29,6 +32,7 @@
             var rules = {
                 firstName: 'required|min:3',
                 lastName: 'required',
+                city: 'required_if:city_req,isi',
                 username: 'required|min:5',
                 password: 'required',
                 email: 'required|email' 

@@ -14,9 +14,6 @@
         vm.messages = {};
 
         function submit() {
-            console.log("sudah ditekan tombolnya");
-            console.log(vm.formData);
-
             var validation = registrationValidator.validate(vm.formData);
             vm.messages = validation.messages;
 
