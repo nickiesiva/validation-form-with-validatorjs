@@ -32,7 +32,7 @@
             var rules = {
                 firstName: 'required|min:3',
                 lastName: 'required',
-                city: 'required_if:city_req,isi',
+                city: 'required_if:city_req,isi|min:4',
                 username: 'required|min:5',
                 password: 'required',
                 email: 'required|email' 

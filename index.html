@@ -22,16 +22,25 @@
                     <div class="input-field col s6">
                         <input id="first_name" type="text" class="validate" ng-model="registration.formData.firstName">
                         <label for="first_name">First Name*</label>
+                        <ul ng-show="registration.messages.firstName" class="error-message">           
+                            <li ng-repeat="message in registration.messages.firstName">{{ message }}</li>
+                        </ul>
                     </div>
                     <div class="input-field col s6">
                         <input id="last_name" type="text" class="validate" ng-model="registration.formData.lastName">
                         <label for="last_name">Last Name*</label>
+                        <ul ng-show="registration.messages.lastName" class="error-message">           
+                            <li ng-repeat="message in registration.messages.lastName">{{ message }}</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="username" type="text" class="validate" ng-model="registration.formData.username">
                         <label for="disabled">Username*</label>
+                        <ul ng-show="registration.messages.username" class="error-message">           
+                            <li ng-repeat="message in registration.messages.username">{{ message }}</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="row shadows">
@@ -44,18 +53,27 @@
                     <div class="input-field col s12">
                         <input id="city" type="text" class="validate" ng-model="registration.formData.city">
                         <label for="city">City</label>
+                        <ul ng-show="registration.messages.city" class="error-message">           
+                            <li ng-repeat="message in registration.messages.city">{{ message }}</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="password" type="password" class="validate" ng-model="registration.formData.password">
                         <label for="password">Password*</label>
+                        <ul ng-show="registration.messages.password" class="error-message">           
+                            <li ng-repeat="message in registration.messages.password">{{ message }}</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="email" type="email" class="validate" ng-model="registration.formData.email">
                         <label for="email">Email*</label>
+                        <ul ng-show="registration.messages.email" class="error-message">           
+                            <li ng-repeat="message in registration.messages.email">{{ message }}</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="row">

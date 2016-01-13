@@ -1,3 +1,7 @@
 .shadows {
     display: none;
 }
+
+.error-message {
+    color: red;
+}
