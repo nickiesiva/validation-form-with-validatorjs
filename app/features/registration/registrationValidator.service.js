@@ -26,7 +26,8 @@
                 city: formData.city,
                 username: formData.username,
                 password: formData.password,
-                email: formData.email
+                password_confirmation: formData.password_confirmation,
+                email: formData.email,
             };
 
             var rules = {
@@ -35,7 +36,8 @@
                 city: 'required_if:city_req,isi|min:4',
                 username: 'required|min:5',
                 password: 'required',
-                email: 'required|email' 
+                password_confirmation: 'required|confirmed',
+                email: 'required|email', 
             };
 
             var errorMessages = {
@@ -43,7 +45,8 @@
                 min: {
                     string: "The :attribute is too short. Minimum length is :min."
                 },
-                email: "This is not valid :attribute format."
+                email: "This is not valid :attribute format.",
+                confirmed: "The :attribute don't match.",
             };
 
             var validation = new validatorjs(data, rules, errorMessages);

@@ -69,6 +69,15 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
+                        <input id="password_confirmation" type="password" class="validate" ng-model="registration.formData.password_confirmation">
+                        <label for="password_confirmation">Password Confirmation*</label>
+                        <ul ng-show="registration.messages.password_confirmation" class="error-message">           
+                            <li ng-repeat="message in registration.messages.password_confirmation">{{ message }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
                         <input id="email" type="email" class="validate" ng-model="registration.formData.email">
                         <label for="email">Email*</label>
                         <ul ng-show="registration.messages.email" class="error-message">           
